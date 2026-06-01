@@ -26,6 +26,13 @@ exports.login = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
+
+    const userAlreadyExists = await User.findOne(email)
+    if(userAlreadyExists){
+      return res.status(400).json({message:"user already exists"})
+    }
+
+
   } catch (error) {
     console.log(error);
     return res.status(500).json({
