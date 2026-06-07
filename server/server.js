@@ -4,6 +4,9 @@ const aiRoutes = require("./routes/aiRoutes");
 const authRoutes = require("./routes/authRoutes");
 const morgan = require(morgan);
 
+
+
+
 const app = express();
 require("dotenv").config();
 
@@ -13,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("morgan")
 
 app.listen(PORT, () => {
   console.log(`server started at port number ${PORT}`);
