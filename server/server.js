@@ -7,6 +7,7 @@ const morgan = require(morgan);
 
 
 
+
 const app = express();
 require("dotenv").config();
 
@@ -21,6 +22,8 @@ app.use("morgan")
 app.listen(PORT, () => {
   console.log(`server started at port number ${PORT}`);
 });
+
+
 
 app.get("/", (req, res) => {
   res.send(`<h1> this is home page</h1>`);
