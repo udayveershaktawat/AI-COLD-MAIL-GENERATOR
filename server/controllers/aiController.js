@@ -223,6 +223,11 @@ Return ONLY valid JSON.`;
   }
 };
 
+
+
+
+
+
 exports.getHistory = async (req, res) => {
   try {
     const history = await EmailHistory.find({ userId: req.user._id }).sort({ createdAt: -1 });
